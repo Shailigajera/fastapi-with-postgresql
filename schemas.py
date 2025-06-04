@@ -1,4 +1,4 @@
-import pydantic import BaseModel
+from pydantic import BaseModel
 
 class BookBase(BaseModel):
     title : str
@@ -12,4 +12,5 @@ class Book(BookBase):
     id : int
 
     class config:
-        
+        # orm_mode =True 
+        from_attribute=True
